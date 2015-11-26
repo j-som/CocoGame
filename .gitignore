@@ -199,4 +199,4 @@ FakesAssemblies/
 cocos2d/
 
 #Build output files
-*/[Dd]ebug*/
+proj.win32/Debug.win32/
