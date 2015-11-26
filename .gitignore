@@ -197,3 +197,6 @@ FakesAssemblies/
 
 #Cocos2d project
 cocos2d/
+
+#Build output files
+*/[Dd]ebug*/
