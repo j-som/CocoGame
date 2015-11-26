@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="30" height="20" tilewidth="32" tileheight="32">
+ <objectgroup name="earth_surface" width="30" height="20">
+  <object name="Surface" type="surface_line" x="0" y="506">
+   <properties>
+    <property name="param" value="1"/>
+   </properties>
+   <polyline points="0,0 31,-26 71,-55 98,-66 127,-69 162,-69 195,-67 240,-56 297,-24 425,44 462,57 508,62 553,62 611,57 690,26 740,0 804,-26 878,-40 959,-45"/>
+  </object>
+  <object x="690" y="326">
+   <polyline points="0,0 56,-73 117,52 154,-34 236,-20"/>
+  </object>
+  <object x="534" y="133">
+   <polygon points="0,0 94,79 -5,118 -98,60"/>
+  </object>
+  <object x="97" y="106" width="172" height="131"/>
+  <object x="309" y="291" width="153" height="153">
+   <ellipse/>
+  </object>
+  <object x="538" y="370" width="197" height="71">
+   <ellipse/>
+  </object>
+  <object x="665" y="48" width="110" height="110"/>
+  <object x="307" y="114">
+   <polygon points="0,0 33,-17 61,-18 90,-18 108,-6 117,7 115,18 103,32 77,35 48,35 14,28 5,15"/>
+  </object>
+ </objectgroup>
+</map>
