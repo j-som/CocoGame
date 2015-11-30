@@ -208,23 +208,14 @@ namespace cocogame {
 		_data.polygonPoints = new std::vector<Point>();
 		float a = this->width / 2;
 		float b = this->height / 2;
-		float step = this->width / 16.0f;
 
-		_data.polygonPoints->reserve(std::ceil(a / step * 4));
-		float px = -a, py = 0;
-		while (px < a)
+		_data.polygonPoints->reserve(10);
+		float angle = 0.0f;
+		while (angle > -360.0f)
 		{
-			py = std::sqrtf(1 - std::powf((px) / a, 2.0f)) * b;
-			_data.polygonPoints->push_back(Point(px, py));
-			px += step;
+			_data.polygonPoints->push_back(Point(std::cosf(angle/180*std::_Pi) * a, std::sin(angle / 180 * std::_Pi) * b));
+			angle -= 22.5f;
 		} 
-		_data.polygonPoints->push_back(Point(a, 0));
-		auto rtps = *_data.polygonPoints;
-		auto bps = *_data.polygonPoints;
-		for (auto it = bps.rbegin() + 1; it != bps.rend() - 1; ++it)
-		{
-			_data.polygonPoints->push_back(Point(it->x, -it->y));
-		}
 		this->x += a;
 	}
 }

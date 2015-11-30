@@ -1,7 +1,9 @@
 #include "CocoControl.h"
 #include <new>
 #include "cocos2d.h"
+
 namespace cocogame {
+	static CocoControl *_shared_instance = nullptr;
 	CocoControl * CocoControl::getInstance()
 	{
 		if (nullptr == _shared_instance)
