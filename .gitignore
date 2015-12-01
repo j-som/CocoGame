@@ -200,3 +200,4 @@ cocos2d/
 
 #Build output files
 */[Dd]ebug*/
+/proj.android-studio/app/assets

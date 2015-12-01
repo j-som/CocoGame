@@ -20,8 +20,8 @@ bool Roco::init()
 	{
 		return false;
 	}
-	auto body = cocos2d::PhysicsBody::createCircle(40, cocos2d::PhysicsMaterial(1.0f, 0.0f, 0.5f));
 	//dy->setMass(1200);
+	auto body = cocos2d::PhysicsBody::createCircle(40, cocos2d::PhysicsMaterial(1.0f, 0.0f, 0.5f));
 	body->setMoment(10);
 	//body->setPositionOffset(cocos2d::Vec2(-100.0f, -100.0f));
 	//auto body = cocos2d::PhysicsBody::createBox(cocos2d::Size(40, 40));
