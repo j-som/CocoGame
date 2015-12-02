@@ -55,15 +55,15 @@ namespace cocogame {
 	};
 	typedef std::vector<StaticBlockObject *> StaticBlockList;
 
-	class MapParser
+	class CocoMapData
 	{
 	public:
-		MapParser();
-		//MapParser(const MapParser &copied);
+		CocoMapData();
+		//CocoMapData(const CocoMapData &copied);
 		bool initWithTMXFile(const std::string &fileName);
 		cocos2d::TMXObjectGroup *getGroupNamed(const std::string &groupName) const;
 		inline const StaticBlockList *getStaticBlockList() { return _staticBlocks; }
-		~MapParser();
+		~CocoMapData();
 
 	private:
 		cocos2d::TMXMapInfo *_mapInfo = nullptr;

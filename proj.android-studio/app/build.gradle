@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.farmyfun.game"
+        applicationId "com.cocogame.game"
         minSdkVersion 10
         targetSdkVersion 15
         versionCode 1

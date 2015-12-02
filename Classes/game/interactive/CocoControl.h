@@ -41,7 +41,7 @@ namespace cocogame {
 		std::vector<AccelerationHandler> _accelerationCallbacks;
 		cocos2d::PhysicsWorld *_physicsWorld;
 		bool _accelerometerEnabled;
-		cocos2d::EventListener*  _accelerometerListener;
+		cocos2d::EventListener* _accelerometerListener;
 	};
 }
 #endif

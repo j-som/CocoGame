@@ -86,7 +86,7 @@ bool HelloWorld::init()
 	//auto line = PhysicsBody::createEdgeSegment(Vec2(origin.x, origin.y + 100), Vec2(origin.x + visibleSize.width, origin.y));
 	//node->setPhysicsBody(line);
 	this->addChild(node);
-	cocogame::MapParser parser;
+	cocogame::CocoMapData parser;
 	parser.initWithTMXFile("res/map/00.tmx");
 	auto list = parser.getStaticBlockList();
 	auto sbody = PhysicsBody::create();
@@ -103,6 +103,12 @@ bool HelloWorld::init()
 	node->setPhysicsBody(sbody);
 	//auto info = new cocogame::MapInfo();
 	//info->parseByTMXMapInfo(*mapInfo);
+	auto camera = new cocogame::CocoCamera();
+	camera->setBackgroundNode(this);
+	camera->setTargetNode(roco);
+	camera->setViewSize(Director::getInstance()->getWinSize());
+	camera->setViewCenter(Director::getInstance()->getWinSize() / 2);
+	camera->open();
     return true;
 }
 

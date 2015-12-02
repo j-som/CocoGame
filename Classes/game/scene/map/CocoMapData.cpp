@@ -1,18 +1,18 @@
-#include "MapParser.h"
+#include "CocoMapData.h"
 #include "cocos2d.h"
 
 using namespace cocos2d;
 namespace cocogame {
-	MapParser::MapParser()
+	CocoMapData::CocoMapData()
 	{
 	}
 
-	//MapParser::MapParser(const MapParser &copied):_mapInfo(copied._mapInfo)
+	//CocoMapData::CocoMapData(const CocoMapData &copied):_mapInfo(copied._mapInfo)
 	//{
 
 	//}
 
-	bool MapParser::initWithTMXFile(const std::string & fileName)
+	bool CocoMapData::initWithTMXFile(const std::string & fileName)
 	{
 		CC_SAFE_RELEASE(_mapInfo);
 		_mapInfo = TMXMapInfo::create(fileName);
@@ -41,7 +41,7 @@ namespace cocogame {
 		return true;
 	}
 
-	cocos2d::TMXObjectGroup * MapParser::getGroupNamed(const std::string & groupName) const
+	cocos2d::TMXObjectGroup * CocoMapData::getGroupNamed(const std::string & groupName) const
 	{
 		auto groups = _mapInfo->getObjectGroups();
 		CCASSERT(groupName.size() > 0, "Invalid group name!");
@@ -63,7 +63,7 @@ namespace cocogame {
 
 
 
-	MapParser::~MapParser()
+	CocoMapData::~CocoMapData()
 	{
 		CC_SAFE_FREE(_mapInfo);
 		CC_SAFE_FREE(_staticBlocks);

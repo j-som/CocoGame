@@ -24,10 +24,16 @@
     <ClCompile Include="..\Classes\Roco.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\game\scene\map\MapParser.cpp">
+    <ClCompile Include="..\Classes\game\interactive\CocoControl.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\game\interactive\CocoControl.cpp">
+    <ClCompile Include="..\Classes\game\world\CocoWorld.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\scene\map\CocoMapData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\game\world\CocoCamera.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -44,13 +50,19 @@
     <ClInclude Include="..\Classes\Roco.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\game\scene\map\MapParser.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\game\cocogame.h">
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\game\interactive\CocoControl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\world\CocoWorld.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\scene\map\CocoMapData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\game\world\CocoCamera.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

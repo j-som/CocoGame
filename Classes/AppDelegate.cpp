@@ -40,6 +40,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto glview = director->getOpenGLView();
     if(!glview) {
         glview = GLViewImpl::create("My Game");
+#if CC_TARGET_PLATFORM == CC_PLATFORM_WIN32
+		glview->setFrameSize(designResolutionSize.width, designResolutionSize.height);
+#endif
         director->setOpenGLView(glview);
     }
 
@@ -48,7 +51,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
-
+	/*
     // Set the design resolution
     glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::NO_BORDER);
     Size frameSize = glview->getFrameSize();
@@ -67,7 +70,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     {        
         director->setContentScaleFactor(MIN(smallResolutionSize.height/designResolutionSize.height, smallResolutionSize.width/designResolutionSize.width));
     }
-
+	*/
     register_all_packages();
 
     // create a scene. it's an autorelease object
