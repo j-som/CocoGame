@@ -1,7 +1,7 @@
 #include "CocoCamera.h"
 using namespace cocos2d;
 namespace cocogame {
-	void CocoCamera::open()
+	void CocoCamera::followBegin()
 	{
 		if (_enterFrameListener == nullptr)
 		{
@@ -10,7 +10,7 @@ namespace cocogame {
 			dispatcher->addEventListenerWithFixedPriority(_enterFrameListener, -1);
 		}
 	}
-	void CocoCamera::close()
+	void CocoCamera::followEnd()
 	{
 		if (_enterFrameListener != nullptr)
 		{
@@ -19,32 +19,32 @@ namespace cocogame {
 			_enterFrameListener = nullptr;
 		}
 	}
-	void CocoCamera::see(cocos2d::Node * node)
-	{
-	}
-	void CocoCamera::onUpdate(cocos2d::Event * evt)
+	inline void CocoCamera::see(cocos2d::Node * node)
 	{
 		auto bgpos = _backgroundNode->convertToWorldSpace(Vec2(0, 0));
-		auto tpos = _targetNode->convertToWorldSpace(Vec2(0, 0));
+		auto tpos = node->convertToWorldSpace(Vec2(0, 0));
 		auto offset = _center - tpos;
-		auto bgSize = _backgroundNode->getContentSize() * 1.2;
 		bgpos += offset;
 		if (bgpos.x > 0)
 		{
 			offset.x -= bgpos.x;
 		}
-		else if (bgpos.x + bgSize.width < _viewSize.width)
+		else if (bgpos.x + _sceneSize.width < _viewPortSize.width)
 		{
-			offset.x += _viewSize.width - bgpos.x - bgSize.width;
+			offset.x += _viewPortSize.width - bgpos.x - _sceneSize.width;
 		}
 		if (bgpos.y > 0)
 		{
 			offset.y -= bgpos.y;
 		}
-		else if (bgpos.y + bgSize.height < _viewSize.height)
+		else if (bgpos.y + _sceneSize.height < _viewPortSize.height)
 		{
-			offset.y += _viewSize.height - bgpos.y - bgSize.height;
+			offset.y += _viewPortSize.height - bgpos.y - _sceneSize.height;
 		}
 		_backgroundNode->setPosition(_backgroundNode->getPosition() + offset);
+	}
+	void CocoCamera::onUpdate(cocos2d::Event * evt)
+	{
+		see(_targetNode);
 	}
 }

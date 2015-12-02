@@ -106,9 +106,10 @@ bool HelloWorld::init()
 	auto camera = new cocogame::CocoCamera();
 	camera->setBackgroundNode(this);
 	camera->setTargetNode(roco);
-	camera->setViewSize(Director::getInstance()->getWinSize());
+	camera->setSceneSize(parser.getMapSize());
+	camera->setViewPortSize(Director::getInstance()->getWinSize());
 	camera->setViewCenter(Director::getInstance()->getWinSize() / 2);
-	camera->open();
+	camera->followBegin();
     return true;
 }
 

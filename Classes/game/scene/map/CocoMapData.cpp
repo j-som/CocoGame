@@ -38,6 +38,7 @@ namespace cocogame {
 			}
 
 		}
+		_mapSize = Size(_mapInfo->getMapSize().width*_mapInfo->getTileSize().width, _mapInfo->getMapSize().height*_mapInfo->getTileSize().height);
 		return true;
 	}
 
@@ -65,7 +66,7 @@ namespace cocogame {
 
 	CocoMapData::~CocoMapData()
 	{
-		CC_SAFE_FREE(_mapInfo);
+		CC_SAFE_RELEASE(_mapInfo);
 		CC_SAFE_FREE(_staticBlocks);
 	}
 

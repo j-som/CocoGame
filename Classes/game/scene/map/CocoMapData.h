@@ -63,11 +63,13 @@ namespace cocogame {
 		bool initWithTMXFile(const std::string &fileName);
 		cocos2d::TMXObjectGroup *getGroupNamed(const std::string &groupName) const;
 		inline const StaticBlockList *getStaticBlockList() { return _staticBlocks; }
+		inline const cocos2d::Size getMapSize() const { return _mapSize; }
 		~CocoMapData();
 
 	private:
 		cocos2d::TMXMapInfo *_mapInfo = nullptr;
 		StaticBlockList *_staticBlocks = nullptr;
+		cocos2d::Size _mapSize;
 	};
 }
 #endif
