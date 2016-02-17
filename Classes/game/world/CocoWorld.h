@@ -1,6 +1,7 @@
 #ifndef __COCO_WORLD_H__
 #define __COCO_WORLD_H__
 #include "cocos2d.h"
+#include "game\scene\map\CocoMapData.h"
 namespace cocogame {
 	class CocoWorld :
 		public cocos2d::Layer
@@ -14,6 +15,7 @@ namespace cocogame {
 		virtual bool createWorldByInfo(const cocos2d::Value &info);
 	private:
 		cocos2d::PhysicsWorld *_physicsWorld;
+		CocoMapData *_mapData;
 	};
 }
 #endif

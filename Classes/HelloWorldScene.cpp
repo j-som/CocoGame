@@ -14,7 +14,7 @@ Scene* HelloWorld::createScene()
 
 	Vect g(0.0f, -50.0f);
 	scene->getPhysicsWorld()->setGravity(g);
-	scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+	//scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
     // add layer as a child to scene
     scene->addChild(layer);
     // return the scene
@@ -79,9 +79,9 @@ bool HelloWorld::init()
     // add the sprite as a child to this layer
     this->addChild(sprite, 0);
 
-	auto roco = Roco::createRoco();
-	roco->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
-	this->addChild(roco, 2);
+	//auto roco = Roco::createRoco();
+	//roco->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+	//this->addChild(roco, 2);
 	auto node = Node::create();
 	//auto line = PhysicsBody::createEdgeSegment(Vec2(origin.x, origin.y + 100), Vec2(origin.x + visibleSize.width, origin.y));
 	//node->setPhysicsBody(line);
@@ -103,13 +103,17 @@ bool HelloWorld::init()
 	node->setPhysicsBody(sbody);
 	//auto info = new cocogame::MapInfo();
 	//info->parseByTMXMapInfo(*mapInfo);
-	auto camera = new cocogame::CocoCamera();
+	/*auto camera = new cocogame::CocoCamera();
 	camera->setBackgroundNode(this);
 	camera->setTargetNode(roco);
 	camera->setSceneSize(parser.getMapSize());
 	camera->setViewPortSize(Director::getInstance()->getWinSize());
 	camera->setViewCenter(Director::getInstance()->getWinSize() / 2);
-	camera->followBegin();
+	camera->followBegin();*/
+	auto ball = cocogame::Softball::create();
+	ball->initWithRadius(40, 12);
+	ball->setPosition(visibleSize / 2);
+	addChild(ball);
     return true;
 }
 

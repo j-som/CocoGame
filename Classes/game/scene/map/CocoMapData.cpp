@@ -112,7 +112,7 @@ namespace cocogame {
 			shapes = new Vector<PhysicsShape *>(_data.edgePoints->size());
 			for (auto it = _data.edgePoints->begin(); (it+1) != _data.edgePoints->end(); ++it)
 			{
-				ret = PhysicsShapeEdgeSegment::create(*it, *(it + 1), material);
+				ret = PhysicsShapeEdgeSegment::create(*it, *(it + 1), material, 2.0f);
 				shapes->pushBack(ret);
 			}
 			break;

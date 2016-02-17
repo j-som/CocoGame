@@ -147,6 +147,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\game\interactive\CocoControl.cpp" />
     <ClCompile Include="..\Classes\game\scene\map\CocoMapData.cpp" />
+    <ClCompile Include="..\Classes\game\scene\object\Softball.cpp" />
     <ClCompile Include="..\Classes\game\world\CocoCamera.cpp" />
     <ClCompile Include="..\Classes\game\world\CocoWorld.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
@@ -158,6 +159,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\game\cocogame.h" />
     <ClInclude Include="..\Classes\game\interactive\CocoControl.h" />
     <ClInclude Include="..\Classes\game\scene\map\CocoMapData.h" />
+    <ClInclude Include="..\Classes\game\scene\object\Softball.h" />
     <ClInclude Include="..\Classes\game\world\CocoCamera.h" />
     <ClInclude Include="..\Classes\game\world\CocoWorld.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
